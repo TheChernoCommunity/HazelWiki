@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<!-- standard meta -->
 		<meta charset="utf-8" />
@@ -8,52 +8,19 @@
 
 		<!-- Site Properities -->
 		<title>Hazel Wiki</title>
-		<link rel="icon" type="image/jpeg" href="assets/images/logo.png" />
+		<link rel="icon" type="image/jpeg" href="assets/logo.png" />
 
 		<meta name="description" content="Wiki for the Hazel Engine" />
 		<meta name="keywords" content="hazel, engine, wiki, game engine" />
-
-		<link rel="stylesheet" type="text/css" href="assets/stylesheets/main.css">
-		<link rel="stylesheet" type="text/css" href="assets/stylesheets/navbar.css">
 	</head>
 
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	
-	<body id="Hazel Wiki" ontouchstart="">
-		<h1>Hazel Wiki</h1>
-		<button onclick="navbar_toggleVisibile()" style="float: right;">Open/Close Nav</button>
 
-		<div class="navbar">
-			<div class="navbar_section">
-				Navigation bar
-			</div>
-			<div class="navbar_section">
-				<div class="navbar_section_header">Testing</div>
-				<a href="#" class="navbar_item">
-					<span class="material-icons">menu</span>Menu
-				</a>
-				<a href="#" class="navbar_item">
-					<span class="material-icons">home</span>Home
-				</a>
-			</div>
-			
-			<div class="navbar_section">
-				<div class="navbar_section_header">More testing</div>
-				<a href="#" class="navbar_item">
-					<span class="material-icons">question_answer</span>Forum
-				</a>
-				<a href="#" class="navbar_item">
-					<span class="material-icons">menu_book</span>API
-				</a>
-			</div>
-		
-			<script>
-				function navbar_toggleVisibile()
-				{	/* toggle navbar visibility */
-					document.querySelector(".navbar").classList.toggle("navbar--visible");
-				}
-			</script>
-		</div>
-		
+	<body>
+		<noscript>
+				<strong>We're sorry but vue doesn't work properly without JavaScript enabled.</strong>
+		</noscript>
+		<div id="app"></div>
+		<!-- built files will be auto injected -->
 	</body>
 </html>
