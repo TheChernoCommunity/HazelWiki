@@ -1,0 +1,27 @@
+@import "color.css";
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin');
+
+/******************************************************************************
+	page
+******************************************************************************/
+
+html,
+body {
+	height: 100%;
+}
+
+html {
+	font-size: 16px;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	overflow-x: hidden;
+	min-width: 320px;
+	background: var(--hz_background);
+	font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 1.4285em;
+	color: var(--hz_color);
+}
