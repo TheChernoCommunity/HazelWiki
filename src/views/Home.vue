@@ -1,12 +1,11 @@
 <template>
 	<div class="container">
-		<h3>Home page</h3>
-		<button v-on:click="toggleNavbar">Toggle menu</button>
+		<zero-md src="https://raw.githubusercontent.com/TheCherno/Hazel/master/README.md"></zero-md>
 	</div>
 </template>
 
 <script>
-	import { EventBus } from '../main.js';
+	import { EventBus } from '@/main.js';
 
 	export default {
 		data() {

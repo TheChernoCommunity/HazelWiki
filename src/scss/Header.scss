@@ -1,0 +1,10 @@
+@import "./global.scss";
+
+$Header_height: 41px;
+$Header_padding: .92857143em 1.14285714em; //16px, 13px;
+
+$Header_background: #1b1c1d;
+$Header_border: rgba(255, 255, 255, 0.08);
+
+$Header_color: rgba(255, 255, 255, 0.9);
+$Header_font_family: $Global_font_family;
