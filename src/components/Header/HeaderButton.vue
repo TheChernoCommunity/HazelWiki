@@ -1,6 +1,6 @@
 <template>
 	<a class="header_button" v-on:click="buttonAction(eventName)">
-		<HeaderLabel :icon="icon" :label="label" />
+		<header-label :icon="icon" :label="label" />
 	</a>
 </template>
 
@@ -31,7 +31,7 @@
 			}
 		},
 		components: {
-			HeaderLabel
+			'header-label' : HeaderLabel
 		}
 	}
 </script>

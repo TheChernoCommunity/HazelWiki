@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<NavBar :toc="navBarLayout" />
-		<Overlay></Overlay>
-		<Header />
+		<navigation-bar :toc="navBarLayout" />
+		<overlay />
+		<top-header />
 		<router-view/>
 	</div>
 </template>
@@ -10,12 +10,12 @@
 <script>
 	import NavBar from './components/Navbar/Navbar';
 	import Header from './components/Header/Header';
+	import Overlay from "./components/Overlay/Overlay";
 
 	import '../node_modules/materialize-css/dist/css/materialize.min.css';
 	import '../node_modules/materialize-css/dist/js/materialize.min.js';
-	import Overlay from "./components/Overlay/Overlay";
 
-	const navBarLayout = require('../assets/NavBarLayout.json');
+	const navBarLayout = require('./assets/NavBarLayout.json');
 
 	export default {
 		name: 'App',
@@ -25,9 +25,9 @@
 			}
 		},
 		components: {
-			Overlay,
-			Header,
-			NavBar,
+			'overlay': Overlay,
+			'top-header': Header,
+			'navigation-bar': NavBar,
 		}
 	}
 </script>

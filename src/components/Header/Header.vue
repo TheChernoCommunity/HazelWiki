@@ -1,8 +1,8 @@
 <template>
 	<div class="header">
 		<span class="left">
-			<HeaderButton eventName='navbar-toggleVisibile' icon='menu' label='' />
-			<HeaderLabel icon='home' label='Pagetitle' />
+			<header-button eventName='navbar-toggleVisibile' icon='menu' label='' />
+			<header-label icon='home' label='Pagetitle' />
 		</span>
 		<span class="right">
 			<!-- https://buttons.github.io/ -->
@@ -23,8 +23,8 @@
 
 	export default {
 		components: {
-			HeaderLabel,
-			HeaderButton
+			'header-label' : HeaderLabel,
+			'header-button' : HeaderButton
 		}
 	}
 </script>

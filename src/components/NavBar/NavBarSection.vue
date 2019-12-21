@@ -1,7 +1,7 @@
 <template>
 	<div class="navbar_section">
 		<span class="navbar_section_header">
-			<i class="material-icons" v-if="icon !== ''">{{ icon }}</i>{{ label }}
+			<span class="material-icons" v-if="icon !== ''">{{ icon }}</span>{{ label }}
 		</span>
 		<slot></slot>
 	</div>

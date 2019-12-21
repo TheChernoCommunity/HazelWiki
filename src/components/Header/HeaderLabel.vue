@@ -1,6 +1,6 @@
 <template>
 	<span class="header_label">
-		<i class="material-icons" v-if="icon !== ''">{{ icon }}</i>
+		<span class="material-icons" v-if="icon !== ''">{{ icon }}</span>
 		<span class="header_label_spacer" v-if="icon !== '' && label !== ''" />
 		<span v-if="label !== ''">{{ label }}</span>
 	</span>

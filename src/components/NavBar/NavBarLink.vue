@@ -1,6 +1,6 @@
 <template>
 	<router-link @click.native="closeNav" class="navbar_link" v-bind="attrs">
-		<i class="material-icons">{{ icon }}</i>{{ label }}
+		<span class="material-icons">{{ icon }}</span>{{ label }}
 	</router-link>
 </template>
 
@@ -35,7 +35,7 @@
 		methods: {
 			closeNav() {
 				EventBus.$emit('navbar-closeVisibile');
-                EventBus.$emit('overlay-closeVisibile');
+				EventBus.$emit('overlay-closeVisibile');
 			}
 		}
 	}
