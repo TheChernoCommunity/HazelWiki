@@ -9,8 +9,8 @@
 
 <script>
 	import axios from 'axios'
-	import MarkdownParser from './MarkdownParser'
-	import MarkdownElement from './MarkdownElement.vue';
+	import MarkdownParser from './MarkdownParser/MarkdownParser.js'
+	import MarkdownElement from './MarkdownElement/MarkdownElement.vue';
 
 	const parser = new MarkdownParser();
 

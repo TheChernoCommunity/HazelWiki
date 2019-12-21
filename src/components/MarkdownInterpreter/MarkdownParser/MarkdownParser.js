@@ -1,5 +1,5 @@
 import MarkdownToken from './MarkdownToken'
-import MarkdownTokenizer from './MarkdownTokenizer'
+import MarkdownLexer from './MarkdownLexer'
 
 import MarkdownTokenScanner        from './MarkdownTokenScanner'        // Base scanner
 import MarkdownTokenScannerCode    from './MarkdownTokenScannerCode'    // Code scanner
@@ -12,28 +12,27 @@ import MarkdownTokenScannerQuote   from './MarkdownTokenScannerQuote'   // Quote
 import MarkdownTokenScannerBold    from './MarkdownTokenScannerBold'    // Bold scanner
 import MarkdownTokenScannerItalic  from './MarkdownTokenScannerItalic'  // Italic scanner
 
-import MarkdownParserElement from './MarkdownParserElement'
-import { cp } from 'shelljs'
+import MarkdownElement from './MarkdownElement'
 
 export default class MarkdownParser
 {
 	constructor()
 	{
-		// tokenizer is used to create tokens
-		this.tokenizer = new MarkdownTokenizer();
-		this.tokenizer.addScanner(new MarkdownTokenScannerCode());
-		this.tokenizer.addScanner(new MarkdownTokenScannerNewline());
-		this.tokenizer.addScanner(new MarkdownTokenScannerImage());
-		this.tokenizer.addScanner(new MarkdownTokenScannerLink());
-		this.tokenizer.addScanner(new MarkdownTokenScannerHeader());
-		this.tokenizer.addScanner(new MarkdownTokenScannerList());
-		this.tokenizer.addScanner(new MarkdownTokenScannerQuote());
-		this.tokenizer.addScanner(new MarkdownTokenScannerBold());
-		this.tokenizer.addScanner(new MarkdownTokenScannerItalic());
+		// lexer is used to create tokens
+		this.lexer = new MarkdownLexer();
+		this.lexer.addScanner(new MarkdownTokenScannerCode());
+		this.lexer.addScanner(new MarkdownTokenScannerNewline());
+		this.lexer.addScanner(new MarkdownTokenScannerImage());
+		this.lexer.addScanner(new MarkdownTokenScannerLink());
+		this.lexer.addScanner(new MarkdownTokenScannerHeader());
+		this.lexer.addScanner(new MarkdownTokenScannerList());
+		this.lexer.addScanner(new MarkdownTokenScannerQuote());
+		this.lexer.addScanner(new MarkdownTokenScannerBold());
+		this.lexer.addScanner(new MarkdownTokenScannerItalic());
 
 		// codeScanner is used to convert src to text only (used for code and code block)
-		this.codeScanner = new MarkdownTokenizer();
-		this.codeBlockScanner = new MarkdownTokenizer();
+		this.codeScanner = new MarkdownLexer();
+		this.codeBlockScanner = new MarkdownLexer();
 		this.codeBlockScanner.addScanner(new MarkdownTokenScannerNewline());
 
 		this.src = '';
@@ -63,7 +62,7 @@ export default class MarkdownParser
 
 	createTokens()
 	{
-		this.tokenArray = this.tokenizer.tokenize(this.src);
+		this.tokenArray = this.lexer.tokenize(this.src);
 	}
 
 	cleanupTokens()
@@ -89,7 +88,7 @@ export default class MarkdownParser
 				var endIndex = tokenIndex++;
 
 				// Convert the inside of code to text tokens only
-				var src = this.tokenizer.untokenize(this.tokenArray.slice(startIndex, endIndex))
+				var src = this.lexer.untokenize(this.tokenArray.slice(startIndex, endIndex))
 				var tokenArray = []
 				if (token.length == 1)
 				{
@@ -270,7 +269,7 @@ export default class MarkdownParser
 
 			// Create the header element
 			this.insideParagraph = true; // a header content can't be a paragraph
-			var headerElement = MarkdownParserElement.createHeaderElement(token.length, this.createElementsRecursive(tokenArray.slice(1, newlineTokenIndex)));
+			var headerElement = MarkdownElement.createHeaderElement(token.length, this.createElementsRecursive(tokenArray.slice(1, newlineTokenIndex)));
 			this.insideParagraph = false;
 
 			// Return the header
@@ -294,7 +293,7 @@ export default class MarkdownParser
 
 			// Create the code block element
 			this.insideParagraph = true; // a code block can't be a paragraph
-			var codeBlockElement = MarkdownParserElement.createCodeBlockElement(codeLanguage, this.createElementsRecursive(codeBlockContent));
+			var codeBlockElement = MarkdownElement.createCodeBlockElement(codeLanguage, this.createElementsRecursive(codeBlockContent));
 			this.insideParagraph = false;
 
 			// Return the code block element
@@ -345,7 +344,7 @@ export default class MarkdownParser
 
 			// Create the quote element
 			this.insideQuote = true;
-			var quoteElement = MarkdownParserElement.createQuoteElement(this.createElementsRecursive(quoteBlockTokens))
+			var quoteElement = MarkdownElement.createQuoteElement(this.createElementsRecursive(quoteBlockTokens))
 			this.insideQuote = false;
 
 			// Return the paragraph element
@@ -372,7 +371,7 @@ export default class MarkdownParser
 			// Create the paragraph element
 			var insideQuote = this.insideQuote; this.insideQuote = false;
 			this.insideParagraph = true;
-			var paragraphElement = MarkdownParserElement.createParagraphElement(this.createElementsRecursive(tokenArray.slice(paragraphBeginIndex, newlineTokenIndex)));
+			var paragraphElement = MarkdownElement.createParagraphElement(this.createElementsRecursive(tokenArray.slice(paragraphBeginIndex, newlineTokenIndex)));
 			this.insideParagraph = false;
 			this.insideQuote = insideQuote;
 
@@ -385,7 +384,7 @@ export default class MarkdownParser
 		if(token.token == MarkdownTokenScannerNewline.getToken())
 		{
 			// Create the newline element
-			var element = MarkdownParserElement.createNewlineElement(token.length)
+			var element = MarkdownElement.createNewlineElement(token.length)
 
 			// Return the newline element
 			if (tokenArray.length == 1) { return element; }
@@ -396,7 +395,7 @@ export default class MarkdownParser
 		if(token.token == MarkdownTokenScanner.getToken())
 		{
 			// Create the text element
-			var element = MarkdownParserElement.createTextElement(token.content);
+			var element = MarkdownElement.createTextElement(token.content);
 
 			// Return the text element
 			if (tokenArray.length == 1) { return element; }
@@ -411,7 +410,7 @@ export default class MarkdownParser
 			while(++tokenIndex < tokenArray.length && tokenArray[tokenIndex].token != token.token);
 
 			// Create the bold element
-			var boldElement = MarkdownParserElement.createBoldElement(this.createElementsRecursive(tokenArray.slice(1, tokenIndex)))
+			var boldElement = MarkdownElement.createBoldElement(this.createElementsRecursive(tokenArray.slice(1, tokenIndex)))
 
 			// Return the bold element
 			if (tokenIndex == tokenArray.length-1) { return boldElement; }
@@ -426,7 +425,7 @@ export default class MarkdownParser
 			while(++tokenIndex < tokenArray.length && tokenArray[tokenIndex].token != token.token);
 
 			// Create the italic element
-			var italicElement = MarkdownParserElement.createItalicElement(this.createElementsRecursive(tokenArray.slice(1, tokenIndex)))
+			var italicElement = MarkdownElement.createItalicElement(this.createElementsRecursive(tokenArray.slice(1, tokenIndex)))
 
 			// Return the italic element
 			if (tokenIndex == tokenArray.length-1) { return italicElement; }
@@ -459,7 +458,7 @@ export default class MarkdownParser
 				linkElement = this.createElementsRecursive([new MarkdownToken(MarkdownTokenScanner.getToken(), "")]);
 
 			// Create the image element
-			var imageElement = MarkdownParserElement.createImageElement(linkElement, captionElement);
+			var imageElement = MarkdownElement.createImageElement(linkElement, captionElement);
 
 			// Return the image element
 			if (linkTokenIndex == tokenArray.length-1) { return imageElement; }
@@ -492,7 +491,7 @@ export default class MarkdownParser
 				linkElement = this.createElementsRecursive([new MarkdownToken(MarkdownTokenScanner.getToken(), "")]);
 
 			// Create the link element
-			var linkingElement = MarkdownParserElement.createLinkElement(linkElement, captionElement);
+			var linkingElement = MarkdownElement.createLinkElement(linkElement, captionElement);
 
 			// Return the link element
 			if (linkTokenIndex == tokenArray.length-1) { return linkingElement; }
@@ -565,7 +564,7 @@ export default class MarkdownParser
 					}
 					list[listIndex] = [listElement, subListElement];
 				}
-				return MarkdownParserElement.createListElement(list);
+				return MarkdownElement.createListElement(list);
 			}
 			var listElement = createRecursiveListElements(this, listItems);
 
@@ -582,7 +581,7 @@ export default class MarkdownParser
 			while(++tokenIndex < tokenArray.length && tokenArray[tokenIndex].token != token.token);
 
 			// Create the code element
-			var codeElement = MarkdownParserElement.createCodeElement(this.createElementsRecursive(tokenArray.slice(1, tokenIndex)));
+			var codeElement = MarkdownElement.createCodeElement(this.createElementsRecursive(tokenArray.slice(1, tokenIndex)));
 
 			// Return the code element
 			if (tokenIndex == tokenArray.length-1) { return codeElement; }

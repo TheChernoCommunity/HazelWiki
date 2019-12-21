@@ -9,7 +9,7 @@ import MarkdownTokenScannerQuote   from './MarkdownTokenScannerQuote'   // Quote
 import MarkdownTokenScannerBold    from './MarkdownTokenScannerBold'    // Bold scanner
 import MarkdownTokenScannerItalic  from './MarkdownTokenScannerItalic'  // Italic scanner
 
-export default class MarkdownParserElement
+export default class MarkdownElement
 {
 	constructor(token, content)
 	{
@@ -20,65 +20,65 @@ export default class MarkdownParserElement
 	static createParagraphElement(contentElements)
 	{
 		if(contentElements instanceof Array)
-			return new MarkdownParserElement('p', contentElements);
-		return new MarkdownParserElement('p', [contentElements]);
+			return new MarkdownElement('p', contentElements);
+		return new MarkdownElement('p', [contentElements]);
 	}
 
 	static createTextElement(content)
 	{
-		return new MarkdownParserElement(MarkdownTokenScanner.getToken(), content);
+		return new MarkdownElement(MarkdownTokenScanner.getToken(), content);
 	}
 
 	static createBoldElement(boldContent)
 	{
-		return new MarkdownParserElement(MarkdownTokenScannerBold.getToken(), [boldContent]);
+		return new MarkdownElement(MarkdownTokenScannerBold.getToken(), [boldContent]);
 	}
 
 	static createItalicElement(italicContent)
 	{
-		return new MarkdownParserElement(MarkdownTokenScannerItalic.getToken(), [italicContent]);
+		return new MarkdownElement(MarkdownTokenScannerItalic.getToken(), [italicContent]);
 	}
 
 	static createNewlineElement(amount)
 	{
-		return new MarkdownParserElement(MarkdownTokenScannerNewline.getToken(), [amount])
+		return new MarkdownElement(MarkdownTokenScannerNewline.getToken(), [amount])
 	}
 
 	static createHeaderElement(level, contentElement)
 	{
-		return new MarkdownParserElement(MarkdownTokenScannerHeader.getToken(), [level].concat(contentElement));
+		return new MarkdownElement(MarkdownTokenScannerHeader.getToken(), [level].concat(contentElement));
 	}
 
 	static createImageElement(linkElement, captionElement)
 	{
-		return new MarkdownParserElement(MarkdownTokenScannerImage.getToken().join(''), [linkElement].concat(captionElement));
+		return new MarkdownElement(MarkdownTokenScannerImage.getToken().join(''), [linkElement].concat(captionElement));
 	}
 
 	static createLinkElement(linkElement, captionElement)
 	{
-		return new MarkdownParserElement(MarkdownTokenScannerLink.getToken().join(''), [linkElement].concat(captionElement));
+		return new MarkdownElement(MarkdownTokenScannerLink.getToken().join(''), [linkElement].concat(captionElement));
 	}
 
 	static createListElement(listElements)
 	{
-		return new MarkdownParserElement(MarkdownTokenScannerList.getToken(), listElements);
+		return new MarkdownElement(MarkdownTokenScannerList.getToken(), listElements);
 	}
 
 	static createCodeElement(codeContent)
 	{
-		return new MarkdownParserElement(MarkdownTokenScannerCode.getToken(), [codeContent]);
+		return new MarkdownElement(MarkdownTokenScannerCode.getToken(), [codeContent]);
 	}
 
 	static createCodeBlockElement(codeLanguage, codeContent)
 	{
-		return new MarkdownParserElement(MarkdownTokenScannerCode.getToken().repeat(3), [codeLanguage].concat(codeContent));
+		return new MarkdownElement(MarkdownTokenScannerCode.getToken().repeat(3), [codeLanguage].concat(codeContent));
 	}
 
 	static createQuoteElement(contentElements)
 	{
 		if(contentElements instanceof Array)
-			return new MarkdownParserElement(MarkdownTokenScannerQuote.getToken(), contentElements);
-		return new MarkdownParserElement(MarkdownTokenScannerQuote.getToken(), [contentElements]);
+			return new MarkdownElement(MarkdownTokenScannerQuote.getToken(), contentElements);
+		return new MarkdownElement(MarkdownTokenScannerQuote.getToken(), [contentElements]);
 	}
 
 };

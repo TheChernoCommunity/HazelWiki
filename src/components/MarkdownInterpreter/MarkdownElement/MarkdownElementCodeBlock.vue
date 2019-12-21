@@ -3,7 +3,7 @@
 </template>
 
 <script>
-	import CodeStyler from "../CodeStyler/CodeStyler.vue"
+	import CodeStyler from "@/components/CodeStyler/CodeStyler.vue"
 
 	export default {
 		props: {
