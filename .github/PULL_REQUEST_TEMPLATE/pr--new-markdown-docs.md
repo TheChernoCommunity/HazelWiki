@@ -1,8 +1,3 @@
----
-name: 'Pull Request: New Markdown Docs'
-about: Suggest new documentation for the Wiki.
----
-
 #### Describe the issue what documentation is missing.
 A clear and concise description of what content the Wiki is missing. Explain the difference between the expected and the current content.
 A screenshot or copy of the error could be helpful as well.
