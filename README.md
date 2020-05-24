@@ -30,10 +30,10 @@ npm install
 
 Now you have different ways of compiling HazelWiki. In order to host it yourself, you run the developer build.
 ``` bash
-# serve with hot reload at localhost:8080
+# server with hot reload at localhost:8080
 npm run dev
 ```
 
-After it starts up the local server, you can browse to [localhost:8080](localhost:8080) in order to see HazelWiki on your system. When making changes to the static content, a simple refresh will load up your new content.
+After it starts up the local server, you can browse to [`localhost:8080`](localhost:8080) in order to see HazelWiki on your system. When making changes to the static content, a simple refresh will load up your new content.
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
