@@ -27,7 +27,7 @@
 	import MarkdownElementBold      from "./MarkdownElementBold.vue";
 	import MarkdownElementItalic    from "./MarkdownElementItalic.vue";
 	import MarkdownElementCode      from "./MarkdownElementCode.vue";
-	import MarkdownElementCodeblock from "./MarkdownElementCodeblock.vue";
+	import MarkdownElementCodeBlock from "./MarkdownElementCodeBlock.vue";
 	import MarkdownElementLink      from "./MarkdownElementLink.vue";
 	import MarkdownElementImage     from "./MarkdownElementImage.vue";
 	import MarkdownElementList      from "./MarkdownElementList.vue";
@@ -48,7 +48,7 @@
 			'markdown-bold'      : MarkdownElementBold,
 			'markdown-italic'    : MarkdownElementItalic,
 			'markdown-code'      : MarkdownElementCode,
-			'markdown-codeblock' : MarkdownElementCodeblock,
+			'markdown-codeblock' : MarkdownElementCodeBlock,
 			'markdown-link'      : MarkdownElementLink,
 			'markdown-image'     : MarkdownElementImage,
 			'markdown-list'      : MarkdownElementList,

@@ -8,7 +8,7 @@
 </template>
 
 <script>
-	import NavBar from './components/Navbar/Navbar';
+	import NavBar from './components/NavBar/NavBar';
 	import Header from './components/Header/Header';
 	import Overlay from "./components/Overlay/Overlay";
 
@@ -30,4 +30,4 @@
 			'navigation-bar': NavBar,
 		}
 	}
-</script>
+</script>g

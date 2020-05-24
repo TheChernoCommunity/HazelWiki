@@ -1,0 +1,44 @@
+name: HazelWiki
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    if: github.repository == 'LovelySanta/HazelWiki'
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Checkout HazelWiki
+      uses: actions/checkout@v2
+
+    - name: Setup Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+
+    - name: Cache dependencies
+      uses: actions/cache@v1
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
+    - name: Setup HazelWiki
+      run: npm install
+
+    - name: Build HazelWiki
+      run: npm run build
+
+    - name: Deploy HazelWiki
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        #personal_token: ${{ secrets.HAZEL_WIKI_DEPLOY_KEY }}
+        publish_dir: ./dist # A target directory to deploy to GitHub Pages
+        publish_branch: gh-pages # A target branch to deploy to GitHub Pages
+        user_name: 'HazelWiki' # Custom user
+        user_email: 'HazelWiki@users.noreply.github.com'
+        commit_message: Deploy

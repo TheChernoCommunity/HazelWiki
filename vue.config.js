@@ -1,4 +1,5 @@
 module.exports = {
+	publicPath: process.env.NODE_ENV === 'production' ? '/HazelWiki/' : '/',
 	css: {
 		loaderOptions: {
 			// pass options to sass-loader
