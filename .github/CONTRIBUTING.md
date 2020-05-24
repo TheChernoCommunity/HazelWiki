@@ -32,15 +32,15 @@ Also, much of the advice in [How do I ask a good question?][how-to-ask] applies 
 
 ## Contributing a Fix or Feature
 
-You've created a new fix or feature for Hazel. Awesome!
+You've created a new fix or feature for HazelWiki. Awesome!
 
-1. If you haven't already, create a fork of the Hazel repository.
+1. If you haven't already, create a fork of the HazelWiki repository.
 
 2. Create a topic branch, and make all of your changes on that branch.
 
 3. Submit a pull request, use the implemented issue template if it is based on an issue or the new issue template if it is not linked to any issue.
 
-4. Give us a moment. Hazel is maintained by only a few people, all of whom are doing this on their limited free time, so it may take us a bit to review your request. Bug fixes should be merged in directly, while features usually require Cherno's approval with or without it mentioned in one (or more) videos.
+4. Give us a moment. HazelWiki is maintained by only a few people, all of whom are doing this on their limited free time, so it may take us a bit to review your request. 
 
 If you're not sure what any of that means, check out Thinkful's [GitHub Pull Request Tutorial][thinkful-pr-tutorial] for a complete walkthrough of the process.
 
@@ -58,27 +58,23 @@ If you're not sure what any of that means, check out Thinkful's [GitHub Pull Req
 
 - Follow our coding conventions, which we've intentionally kept quite minimal.
 
+### Writing additional Markdown Documentation
+
+- Since the purpose of the Wiki is to create community based documentation and tutorials for the Hazel Game Engine, understanding the process for creating new documentation is important. 
+
+- First, identify if you need a new link in the navbar drawer, or if you just need to add to or update existing markdown. 
+
+- If you do need a new link in the navbar drawer, then open the /src/NavBarLayout.json file, and add a new link entry for your markdown file. 
+
+- After you are satisfied you have a navbar link to your markdown document, you can either find the existing markdown file you editing, or create a new markdown fine in the /static/content folder. 
+
+- It is important to understand that we use a custom Markdown parser and interpreter internally. So some markdown syntax may not be availible to you. Please consult the https://thechernocommunity.github.io/HazelWiki/testpage for our syntax. 
+
+- Test you contribution locally via "npm run dev".
+
+- Submit a PR using the guidelines described above. 
+
 ### Coding Conventions
-
-- Naming convention:
-  - For functions we use pascal case: **`FunctionName`**.
-  - For (scoped) variables and function parameters we use camel case: **`variableName`** and **`parameterName`**.
-
-  - For class names we use pascal case: **`ClassName`**.
-
-  - For class variables we use the Hungarian notation:
-    - Class member variables get the 'm_' prefix: **`m_ClassMemberVariableName`**.
-    - Class static variables get the 's_' prefix: **`s_ClassStaticVariableName`**.
-
-  - For macros we use snake case: **`MACRO_NAME`**.
-    - If it is specifically related to Hazel, we add the 'HZ_' prefix: **`HZ_MACRO_NAME`**.
-    - If there is a macro for the application and for the engine, we add an additional 'CORE_' prefix to the engine macro:  **`HZ_CORE_MACRO_NAME`**.
-
-- Use tabs for indentation, not spaces.
-
-- When in doubt, match the code that's already there.
-
-
 
 [github]: https://github.com
 [how-to-ask]: https://stackoverflow.com/help/how-to-ask
