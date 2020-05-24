@@ -1,5 +1,7 @@
 # HazelWiki
 
+![HazelWiki status](https://github.com/TheChernoCommunity/HazelWiki/workflows/HazelWiki/badge.svg?branch=master&event=push)
+
 The HazelWiki is a collaborative prototype Wiki for [Hazel](https://github.com/TheCherno/Hazel). You can find the HazelWiki published at [TheChernoCommunity.github.io/HazelWiki/](https://thechernocommunity.github.io/HazelWiki/).
 
 ## Getting Started
