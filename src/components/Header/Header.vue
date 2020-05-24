@@ -2,7 +2,7 @@
 	<div class="header">
 		<span class="left">
 			<header-button eventName='navbar-toggleVisibile' icon='menu' label='' />
-			<header-label icon='home' label='Pagetitle' />
+			<!-- <header-label icon='home' label='Pagetitle' /> -->
 		</span>
 		<span class="right">
 			<!-- https://buttons.github.io/ -->
