@@ -1,0 +1,33 @@
+---
+name: 'Issue: Bug report'
+about: Create a report to help us improve HazelWiki
+---
+
+#### Describe the bug
+A clear and concise description of what the bug is.
+A screenshot or copy of the error could be helpful as well.
+
+Make sure your bug can be reproduced with the HazelWiki and not by your own fork that you're creating alongside with HazelWiki. For issues with forks, we're happy to help you in [TheCherno Discord server](https://thecherno.com/discord). Thanks for your understanding.
+
+#### To Reproduce
+Steps to reproduce the behavior:
+1. Go to '...'
+2. Click on '....'
+3. Scroll down to '....'
+4. Open Chrome developer console '....'
+4. See error in console
+
+#### Expected behavior
+A clear and concise description of what you expected to happen.
+
+#### Screenshots
+If applicable, add extra screenshots to help explain your problem.
+
+#### Browser and Version: (please complete the following information)
+- Browser: [e.g. Google Chrome]
+- Version: [e.g. 81.0.4044.138 (Official Build) (64-bit)]
+
+#### Additional context
+Add any other context about the problem here.
+
+
