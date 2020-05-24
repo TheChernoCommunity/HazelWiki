@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- standard meta -->
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+		<!-- Single Page Apps for GitHub Pages -->
+		<script type="text/javascript">
+			// This script checks to see if a redirect is present in the query string
+			// and converts it back into the correct url and adds it to the
+			// browser's history using window.history.replaceState(...),
+			// which won't cause the browser to attempt to load the new url.
+			// When the single page app is loaded further down in this file,
+			// the correct url will be waiting in the browser's history for
+			// the single page app to route accordingly.
+			(function(l) {
+				if (l.search) {
+					var q = {};
+					l.search.slice(1).split('&').forEach(function(v) {
+						var a = v.split('=');
+						q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
+					});
+					if (q.p !== undefined) {
+						window.history.replaceState(null, null,
+							l.pathname.slice(0, -1) + (q.p || '') +
+							(q.q ? ('?' + q.q) : '') +
+							l.hash
+						);
+					}
+				}
+			}(window.location))
+		</script>
+
+		<!-- Site Properities -->
+		<title>Hazel Wiki</title>
+		<link rel="icon" type="image/jpeg" href="./static/assets/logo.png" />
+
+		<meta name="description" content="Wiki for the Hazel Engine" />
+		<meta name="keywords" content="hazel, engine, wiki, game engine" />
+
+		<!-- Includes -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+		<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
+		<script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"></script>
+	</head>
+
+	<body>
+		<noscript>
+				<strong>We're sorry but vue doesn't work properly without JavaScript enabled.</strong>
+		</noscript>
+		<div id="app"></div><!-- built files will be auto injected -->
+	</body>
+</html>
