@@ -31,7 +31,7 @@ export default class MarkdownTokenScanner
 			var scanToken = this.scanners[scannerIndex].scan(src);
 			if (scanToken.isValid()) { return scanToken; }
 		}
-		
+
 		// It is not registered, so this scanner recognizes it as plain text
 		return new MarkdownToken(MarkdownTokenScanner.getToken(), src.charAt(0), 1);
 	}
@@ -51,8 +51,8 @@ export default class MarkdownTokenScanner
 			var unscanSrc = this.scanners[scannerIndex].unscan(token);
 			if (unscanSrc !== '') { return unscanSrc; }
 		}
-		
+
 		// Still not recognized, we just return nothing...
 		return ''
 	}
-};
+}

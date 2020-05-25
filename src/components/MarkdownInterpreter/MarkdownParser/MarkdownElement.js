@@ -81,4 +81,4 @@ export default class MarkdownElement
 		return new MarkdownElement(MarkdownTokenScannerQuote.getToken(), [contentElements]);
 	}
 
-};
+}

@@ -26,7 +26,7 @@ export default class MarkdownTokenScannerHeader extends MarkdownTokenScanner
 			return MarkdownToken.nullToken();
 		}
 	}
-	
+
 	unscan(token)
 	{
 		if (token.token == this.token)
@@ -38,4 +38,4 @@ export default class MarkdownTokenScannerHeader extends MarkdownTokenScanner
 		}
 		return '';
 	}
-};
+}
