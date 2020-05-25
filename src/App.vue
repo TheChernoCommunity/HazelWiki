@@ -12,8 +12,8 @@
   import Header from './components/Header/Header';
   import Overlay from "./components/Overlay/Overlay";
 
-  import '../node_modules/materialize-css/dist/css/materialize.min.css';
-  import '../node_modules/materialize-css/dist/js/materialize.min.js';
+  import '../node_modules/materialize-css/dist/css/materialize.css';
+  import '../node_modules/materialize-css/dist/js/materialize.js';
 
   const navBarLayout = require('./assets/NavBarLayout.json');
 
