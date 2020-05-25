@@ -14,7 +14,7 @@ Steps to reproduce the behavior:
 1. Go to '...'
 2. Click on '....'
 3. Scroll down to '....'
-4. Open Chrome developer console '....'
+4. Open developer console '....'
 4. See error in console
 
 #### Expected behavior
