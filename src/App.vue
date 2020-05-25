@@ -1,35 +1,35 @@
 <template>
-	<div>
-		<navigation-bar :toc="navBarLayout" />
-		<overlay />
-		<top-header />
-		<router-view/>
-	</div>
+  <div>
+    <navigation-bar :toc="navBarLayout" />
+    <overlay />
+    <top-header />
+    <router-view/>
+  </div>
 </template>
 
 <script>
-	import NavBar from './components/NavBar/NavBar';
-	import Header from './components/Header/Header';
-	import Overlay from "./components/Overlay/Overlay";
+  import NavBar from './components/NavBar/NavBar';
+  import Header from './components/Header/Header';
+  import Overlay from "./components/Overlay/Overlay";
 
-	import '../node_modules/materialize-css/dist/css/materialize.min.css';
-	import '../node_modules/materialize-css/dist/js/materialize.min.js';
+  import '../node_modules/materialize-css/dist/css/materialize.min.css';
+  import '../node_modules/materialize-css/dist/js/materialize.min.js';
 
-	const navBarLayout = require('./assets/NavBarLayout.json');
+  const navBarLayout = require('./assets/NavBarLayout.json');
 
-	export default {
-		name: 'App',
-		data() {
-			return {
-				navBarLayout: navBarLayout,
-			}
-		},
-		components: {
-			'overlay': Overlay,
-			'top-header': Header,
-			'navigation-bar': NavBar,
-		}
-	}
-</script>g
+  export default {
+    name: 'App',
+    data() {
+      return {
+        navBarLayout: navBarLayout,
+      }
+    },
+    components: {
+      'overlay': Overlay,
+      'top-header': Header,
+      'navigation-bar': NavBar,
+    }
+  }
+</script>
 
 
