@@ -33,6 +33,7 @@
 		"label": "Dev",
 		"icon": "code",
 		"links": [
+			{ "to": "/ContributingMarkdown", "label": "Contributing markdown", "type": "markdown", "src": "ContributingMarkdown.md" },
 			{ "to": "/testpage", "label": "Testpage markdown", "type": "markdown", "src": "Testfile.md" }
 		]
 	}
