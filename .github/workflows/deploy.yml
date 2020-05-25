@@ -30,10 +30,10 @@ jobs:
       run: npm install
 
     - name: Build HazelWiki
-      run: npm run build
+      run: npm run serve
 
     - name: Post build HazelWiki
-      run: cp ./404.html ./dist/
+      run: cp ./public/404.html ./dist/
 
     - name: Deploy HazelWiki
       uses: peaceiris/actions-gh-pages@v3
