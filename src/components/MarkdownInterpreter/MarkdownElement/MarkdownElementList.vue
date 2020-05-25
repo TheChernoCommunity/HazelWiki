@@ -35,5 +35,7 @@
 		list-style-type: circle;
 		list-style-position: outside;
 		display: list-item;
+
+		white-space: normal;
 	}
 </style>

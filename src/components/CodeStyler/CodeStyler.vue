@@ -1,5 +1,5 @@
 <template>
-	<div  class="code-styler">
+	<div class="code-styler">
 		<pre>
 			<code-styler-line-number :amount="numberOfLines" :visible="lineNumbers" />
 			<code-styler-code :src="src" :language="language" />

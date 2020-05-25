@@ -30,7 +30,7 @@
 		]
 	},
 	{
-		"label": "Dev",
+		"label": "Wiki Dev",
 		"icon": "code",
 		"links": [
 			{ "to": "/ContributingMarkdown", "label": "Contributing markdown", "type": "markdown", "src": "ContributingMarkdown.md" },
