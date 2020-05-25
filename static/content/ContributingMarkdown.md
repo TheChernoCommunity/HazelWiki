@@ -30,7 +30,7 @@ Using this knowledge, I opened the /src/NavBarLayout.json file. I identified the
 This json describes a few things to the page. 
 - The **to** key describes to HazelWiki that the route to access this document should be /ContributingMarkdown. This is dynamic, and can be set to anything unique. 
 - The **label**  key describes the label that should be used in the navbar drawer (please make this descriptive, and short).
-- The **markdown** key describes to HazelWiki that it is markdown (for us this will always be true).
+- The **type** key describes to HazelWiki that it is markdown (for us this will always be true).
 - The **src** key describes the name of the markdown document. It already understands the path to the markdown document should be /static/content.
 
 Now that HazelWiki understands how to link to your document, we need to create it. This will be created in the path /static/content/FileName.md (please use Pascal Case naming).
