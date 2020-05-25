@@ -40,5 +40,3 @@ Next write the document, then test it locally.
 When you are ready for us to review it, submit a PR to the `dev` branch. 
 
 Thanks!
-
-
