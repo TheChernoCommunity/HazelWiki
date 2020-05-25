@@ -5,9 +5,9 @@
 				:label="section.label"
 				:icon="section.icon">
 				<navbar-link v-for="(link, index) in section.links" :key="index"
-							 :label="link.label"
-							 :icon="link.icon"
-							 :to="link.to"
+					:label="link.label"
+					:icon="link.icon"
+					:to="link.to"
 				/>
 			</navbar-section>
 		</div>

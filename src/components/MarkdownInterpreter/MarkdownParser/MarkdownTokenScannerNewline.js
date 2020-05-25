@@ -33,4 +33,4 @@ export default class MarkdownTokenScannerNewline extends MarkdownTokenScanner
 			return this.token.concat(this.token.repeat(token.length-1));
 		return '';
 	}
-};
+}

@@ -15,4 +15,4 @@ export default class MarkdownToken
 	static endOfFileToken() { return new MarkdownToken('EOF', null, 0); }
 	static nullToken() { return new MarkdownToken('NULL', null, 0); }
 	static errorToken() { return new MarkdownToken('ERROR', null, 0); }
-};
+}
