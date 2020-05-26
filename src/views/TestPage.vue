@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
 		<!--<markdown-page src="https://raw.githubusercontent.com/TheCherno/Hazel/master/README.md" />-->
-		<markdown-page src="./content/Testfile.md" />
+		<markdown-page src="./content/Wiki Dev/Testfile.md" />
 	</div>
 </template>
 
