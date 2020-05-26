@@ -63,7 +63,6 @@ function createRoutes() {
 			}
 	}
 
-	console.log(routes);
 	return routes;
 }
 
