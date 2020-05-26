@@ -18,7 +18,6 @@ function createRoutes() {
 			.replace(everythingUpToFirstWord, '')
 			.replace(previousDir, '')
 			.replace(currentDir, '');
-		console.log(".content/".concat(cleanedRelativePath));
 		return "./content/".concat(cleanedRelativePath);
 	}
 
@@ -64,6 +63,7 @@ function createRoutes() {
 			}
 	}
 
+	console.log(routes);
 	return routes;
 }
 
