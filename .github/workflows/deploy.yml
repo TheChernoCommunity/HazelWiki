@@ -30,7 +30,7 @@ jobs:
       run: npm install
 
     - name: Build HazelWiki
-      run: npm run serve
+      run: npm run build
 
     - name: Post build HazelWiki
       run: cp ./public/404.html ./dist/
