@@ -33,4 +33,4 @@ export default class MarkdownTokenScannerQuote extends MarkdownTokenScanner
 			return this.token;
 		return '';
 	}
-};
+}

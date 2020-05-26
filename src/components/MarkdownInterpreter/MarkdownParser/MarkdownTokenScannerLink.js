@@ -28,7 +28,7 @@ export default class MarkdownTokenScannerLink extends MarkdownTokenScanner
 			return MarkdownToken.nullToken();
 		}
 	}
-	
+
 	unscan(token)
 	{
 		if (token.token == this.token.join(''))
@@ -39,4 +39,4 @@ export default class MarkdownTokenScannerLink extends MarkdownTokenScanner
 		}
 		return '';
 	}
-};
+}

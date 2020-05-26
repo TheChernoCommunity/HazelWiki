@@ -5,7 +5,7 @@ import BasicPage from './../views/BasicPage.vue'
 import Testpage from './../views/TestPage.vue'
 import PageNotFound from './../views/PageNotFound.vue'
 
-const navBarLayout = require('@/assets/NavBarLayout.json');
+const HazelWikiLayout = require('@/assets/HazelWikiLayout.json');
 
 Vue.use(Router)
 
@@ -16,7 +16,7 @@ function createRoutes() {
 				path: routeData.to,
 				component: BasicPage,
 				props: {
-					src: "./static/content/".concat(routeData.src)
+					src: "./content/".concat(routeData.src)
 				}
 			};
 		if (routeData.type == "ignore")
@@ -39,9 +39,9 @@ function createRoutes() {
 	]
 
 	// Add the markdown content files
-	for(var sectionIndex=0; sectionIndex < navBarLayout.length; sectionIndex++)
+	for(var sectionIndex=0; sectionIndex < HazelWikiLayout.length; sectionIndex++)
 	{
-		var navSectionLayout = navBarLayout[sectionIndex].links;
+		var navSectionLayout = HazelWikiLayout[sectionIndex].links;
 		if(navSectionLayout)
 			for(var linkIndex=0; linkIndex < navSectionLayout.length; linkIndex++)
 			{

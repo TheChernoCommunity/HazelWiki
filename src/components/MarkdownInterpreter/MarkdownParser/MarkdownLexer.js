@@ -33,4 +33,4 @@ export default class MarkdownTokenizer {
 		if (tokenArray.length <= 1) { return this.scanner.unscan(tokenArray[0]); }
 		return this.scanner.unscan(tokenArray[0]).concat(this.untokenizeRecursive(tokenArray.slice(1)))
 	}
-};
+}

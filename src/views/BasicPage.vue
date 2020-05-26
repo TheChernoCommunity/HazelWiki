@@ -19,3 +19,9 @@
 		}
 	}
 </script>
+
+<style scoped lang="scss" rel="stylesheet/scss">
+	.container {
+		padding-top: 5px;
+	}
+</style>
