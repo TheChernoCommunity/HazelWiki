@@ -26,7 +26,7 @@
 	{
 		"label": "Useful Links",
 		"links": [
-			{ "to": "https://thecherno.com/discord", "label": "Forum", "icon": "question_answer", "type": "ignore" }
+			{ "to": "https://thecherno.com/discord", "label": "Discord", "icon": "question_answer", "type": "ignore" }
 		]
 	},
 	{
