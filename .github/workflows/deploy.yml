@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    if: github.repository == 'cxgslegend/HazelWiki'
+    if: github.repository == 'TheChernoCommunity/HazelWiki'
     runs-on: ubuntu-18.04
     steps:
     - name: Checkout HazelWiki
