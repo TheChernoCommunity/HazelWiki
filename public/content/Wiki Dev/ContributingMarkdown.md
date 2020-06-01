@@ -26,8 +26,9 @@ This json describes a few things to the page.
 - The **to** key describes to HazelWiki that the route to access this document should be `https://thechernocommunity.github.io/HazelWiki<to>`, in this case this will be `https://thechernocommunity.github.io/HazelWiki/ContributingMarkdown`. This is dynamic, and can be set to anything unique, but must start with a `/`.
 - The **label** key describes the label that should be used in the navbar drawer (please make this descriptive, and short).
 - The **icon** key describes the icon that should be placed before the label in the navbar drawer. The icons are taken from the [Material](https://material.io/resources/icons) library. Since I didn't feel the need for an icon, I left this part out.
-- The **type** key describes to HazelWiki that it is markdown, for us this will always be true.
+- The **type** key describes to HazelWiki that it is markdown, for us this will always be true and set to `"markdown"`.
 - The **src** key describes the name of the markdown document. It already understands the path to the markdown document should be `/public/content/`.
+- The **hidden** key describes if the page should be linked in the navigation section. You can set this to `true` or `false`. Ommiting this property will default to `false`, so it is not hidden.
 
 Now that HazelWiki understands how to link to your document, we need to create it. This will be created in the path `/public/content/<src>`, where I fill in the src that I entered in the json file `/public/content/ContributingMarkdown.md` (please use Pascal Case naming).
 
