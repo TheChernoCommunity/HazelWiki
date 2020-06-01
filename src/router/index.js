@@ -31,6 +31,15 @@ function createRoutes() {
 				}
 			};
 		}
+		else if (routeData.type == "external-link") {
+			return {
+				path: routeData.to,
+				component: BasicPage,
+				props: {
+					src: createMarkdownFileIncludePath(routeData.src)
+				}
+			};
+		}
 		else if (routeData.type == "ignore")
 			return null; // ignore this type, suppressing warning
 

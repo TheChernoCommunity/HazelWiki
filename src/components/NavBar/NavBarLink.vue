@@ -1,7 +1,10 @@
 <template>
-	<router-link @click.native="closeNav" class="navbar_link" v-bind="attrs">
+	<router-link @click.native="closeNav" class="navbar_link" v-bind="attrs" v-if="!external">
 		<span class="material-icons">{{ icon }}</span>{{ label }}
 	</router-link>
+	<a :href="externalTo" @click="closeNav" class="navbar_link" target="_blank" rel="noopener noreferrer" v-else>
+		<span class="material-icons">{{ icon }}</span>{{ label }}
+	</a>
 </template>
 
 <script>
@@ -13,6 +16,11 @@
 				type: String,
 				required: true
 			},
+			external: {
+				type: Boolean,
+				required: false,
+				default: false
+			},
 			icon: {
 				type: String,
 				required: false,
@@ -23,6 +31,16 @@
 			// Getting the property out of the parent, and making sure it gets down to the router-link component.
 			//
 			// NOTE: In the future, the default should probably go to 404 if no route is given.
+			externalTo() {
+				let startingTo = this.$attrs.to || "/";
+
+				let alreadyStartsWithHttpOrHttps = /^https?:\/\//i;
+				if (!alreadyStartsWithHttpOrHttps.test(startingTo)) {
+					return "https://" + startingTo;
+				}
+
+				return startingTo;
+			},
 			to() {
 				return this.$attrs.to || "/"
 			},
