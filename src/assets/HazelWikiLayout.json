@@ -6,35 +6,35 @@
 		"label": "Basics",
 		"icon": "info",
 		"links": [
-			{ "to": "/"                  , "label": "Home"               , "type": "markdown", "src": "Home.md"               },
-			{ "to": "/Features"          , "label": "Features"           , "type": "markdown", "src": "FutureFeatures.md"     },
-			{ "to": "/GettingStarted"    , "label": "Getting started"    , "type": "markdown", "src": "GettingStarted.md"     },
-			{ "to": "/SystemRequirements", "label": "System requirements", "type": "markdown", "src": "SystemRequirements.md" },
-			{ "to": "/BuildingHazel"     , "label": "Building Hazel"     , "type": "markdown", "src": "BuildingHazel.md"      },
-			{ "to": "/FirstProject"      , "label": "First project"      , "type": "markdown", "src": "FirstProject.md"       }
+			{ "to": "/"                  , "label": "Home"               , "type": "markdown", "src": "Basics/Home.md"               },
+			{ "to": "/Features"          , "label": "Features"           , "type": "markdown", "src": "Basics/FutureFeatures.md"     },
+			{ "to": "/GettingStarted"    , "label": "Getting started"    , "type": "markdown", "src": "Basics/GettingStarted.md"     },
+			{ "to": "/SystemRequirements", "label": "System requirements", "type": "markdown", "src": "Basics/SystemRequirements.md" },
+			{ "to": "/BuildingHazel"     , "label": "Building Hazel"     , "type": "markdown", "src": "Basics/BuildingHazel.md"      },
+			{ "to": "/FirstProject"      , "label": "First project"      , "type": "markdown", "src": "Basics/FirstProject.md"       }
 		]
 	},
 	{
 		"label": "Engine",
 		"icon": "menu_book",
 		"links": [
-			{ "to": "/Benchmarking", "label": "Benchmarking", "type": "markdown", "src": "Benchmarking.md" },
-			{ "to": "/LayerSystem" , "label": "Layer system", "type": "markdown", "src": "LayerSystem.md"  },
-			{ "to": "/EventSystem" , "label": "Event system", "type": "markdown", "src": "EventSystem.md"  }
+			{ "to": "/Benchmarking", "label": "Benchmarking", "type": "markdown", "src": "Engine/Benchmarking.md" },
+			{ "to": "/LayerSystem" , "label": "Layer system", "type": "markdown", "src": "Engine/LayerSystem.md"  },
+			{ "to": "/EventSystem" , "label": "Event system", "type": "markdown", "src": "Engine/EventSystem.md"  }
 		]
 	},
 	{
-		"label": "Usefull links",
+		"label": "Useful Links",
 		"links": [
-			{ "to": "#", "label": "Forum", "icon": "question_answer", "type": "ignore" }
+			{ "to": "https://thecherno.com/discord", "label": "Discord", "icon": "question_answer", "type": "ignore" }
 		]
 	},
 	{
-		"label": "Wiki dev",
+		"label": "Wiki Dev",
 		"icon": "code",
 		"links": [
-			{ "to": "/ContributingMarkdown", "label": "Contributing markdown", "type": "markdown", "src": "ContributingMarkdown.md" },
-			{ "to": "/testpage", "label": "Testpage markdown", "type": "markdown", "src": "Testfile.md", "hidden": true }
+			{ "to": "/ContributingMarkdown", "label": "Contributing markdown", "type": "markdown", "src": "Wiki Dev/ContributingMarkdown.md" },
+			{ "to": "/testpage", "label": "Testpage markdown", "type": "markdown", "src": "Wiki Dev/Testfile.md", "hidden": true }
 		]
 	}
 ]

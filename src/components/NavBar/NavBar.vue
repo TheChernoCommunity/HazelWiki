@@ -1,13 +1,14 @@
 <template>
 	<transition name = "navbar_fade">
 		<div class="navbar" v-show="visible">
-			<navbar-section v-for="(section, index) in toc" :key="index"
+			<navbar-section v-for="(section, index) in externalLinkArray" :key="index"
 				:label="section.label"
 				:icon="section.icon">
 				<navbar-link v-for="(link, index) in section.links" :key="index"
 					:label="link.label"
 					:icon="link.icon"
 					:to="link.to"
+					:external="link.external"
 					:hidden="link.hidden"
 				/>
 			</navbar-section>
@@ -44,6 +45,29 @@
 				this.visible = false;
 				EventBus.$emit('overlay-closeVisibile');
 			});
+		},
+		computed: {
+			externalLinkArray () {
+				let externalLinkArray = this.toc;
+				for (let section of externalLinkArray) {
+					if (section.links) {
+						for (let link of section.links) {
+							if (link.type == 'ignore') {
+								let itStartWithASlash = /^\//;
+								if (itStartWithASlash.test(link.to)) {
+									// We assume if the to: attribute starts with / it is a component, and not external
+									link['external'] = false;
+								}
+								link['external'] = true;
+							} else {
+								// It cannot be an external link if its type is not ignore (like 'markdown')
+								link['external'] = false;
+							}
+						}
+					}
+				}
+				return externalLinkArray;
+			}
 		},
 		components: {
 			'navbar-section': NavBarSection,
