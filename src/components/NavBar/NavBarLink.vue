@@ -1,5 +1,5 @@
 <template>
-	<router-link @click.native="closeNav" class="navbar_link" v-bind="attrs">
+	<router-link v-if="!hidden" @click.native="closeNav" class="navbar_link" v-bind="attrs">
 		<span class="material-icons">{{ icon }}</span>{{ label }}
 	</router-link>
 </template>
@@ -17,6 +17,11 @@
 				type: String,
 				required: false,
 				default: ''
+			},
+			hidden: {
+				type: Boolean,
+				required: false,
+				default: false
 			}
 		},
 		computed: {
