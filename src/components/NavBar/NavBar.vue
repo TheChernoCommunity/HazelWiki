@@ -9,6 +9,7 @@
 					:icon="link.icon"
 					:to="link.to"
 					:external="link.external"
+					:hidden="link.hidden"
 				/>
 			</navbar-section>
 		</div>

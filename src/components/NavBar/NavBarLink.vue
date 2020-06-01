@@ -1,8 +1,8 @@
 <template>
-	<router-link @click.native="closeNav" class="navbar_link" v-bind="attrs" v-if="!external">
+	<router-link v-if="!hidden && !external" @click.native="closeNav" class="navbar_link" v-bind="attrs">
 		<span class="material-icons">{{ icon }}</span>{{ label }}
 	</router-link>
-	<a :href="externalTo" @click="closeNav" class="navbar_link" target="_blank" rel="noopener noreferrer" v-else>
+	<a v-else-if="!hidden && external" :href="externalTo" @click="closeNav" class="navbar_link" target="_blank" rel="noopener noreferrer">
 		<span class="material-icons">{{ icon }}</span>{{ label }}
 	</a>
 </template>
@@ -25,6 +25,11 @@
 				type: String,
 				required: false,
 				default: ''
+			},
+			hidden: {
+				type: Boolean,
+				required: false,
+				default: false
 			}
 		},
 		computed: {
