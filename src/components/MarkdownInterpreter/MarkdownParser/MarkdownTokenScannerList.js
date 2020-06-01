@@ -31,4 +31,4 @@ export default class MarkdownTokenScannerList extends MarkdownTokenScanner
 			return this.token;
 		return '';
 	}
-};
+}

@@ -1,9 +1,9 @@
 <template>
 	<span>
 		<!-- These commens around the tags must stay, oterwise all elements
-		     must be placed on a single line, as these are messing with the
-		     code tags in vue, resulting in leading and trailing spaces...
-		     This way this code stays a bit readable
+			must be placed on a single line, as these are messing with the
+			code tags in vue, resulting in leading and trailing spaces...
+			This way this code stays a bit readable
 		--><markdown-header    v-if="element.token === '#'"     :element="element" /><!--
 		--><markdown-paragraph v-if="element.token === 'p'"     :element="element" /><!--
 		--><markdown-newline   v-if="element.token === '\n'"    :element="element" /><!--

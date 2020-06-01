@@ -35,7 +35,7 @@
 
 		<!-- Site Properities -->
 		<title>Hazel Wiki</title>
-		<link rel="icon" type="image/jpeg" href="./static/assets/logo.png" />
+		<link rel="icon" type="image/jpeg" href="./assets/logo.png" />
 
 		<meta name="description" content="Wiki for the Hazel Engine" />
 		<meta name="keywords" content="hazel, engine, wiki, game engine" />
@@ -48,11 +48,10 @@
 		<script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
 		<script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"></script>
 	</head>
-
-	<body>
-		<noscript>
-				<strong>We're sorry but vue doesn't work properly without JavaScript enabled.</strong>
-		</noscript>
-		<div id="app"></div><!-- built files will be auto injected -->
-	</body>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div><!-- built files will be auto injected -->
+  </body>
 </html>

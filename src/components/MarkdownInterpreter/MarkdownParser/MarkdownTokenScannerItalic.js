@@ -31,4 +31,4 @@ export default class MarkdownTokenScannerItalic extends MarkdownTokenScanner
 			return this.token.concat(this.token);
 		return '';
 	}
-};
+}

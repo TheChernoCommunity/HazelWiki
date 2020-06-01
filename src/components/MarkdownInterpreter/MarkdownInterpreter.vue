@@ -37,7 +37,7 @@
 			});
 		},
 		watch: {
-			src(newValue) {
+			src() {
 				axios({
 					url: this.src,
 					method: 'GET'

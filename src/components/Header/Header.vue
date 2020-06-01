@@ -18,12 +18,12 @@
 </template>
 
 <script>
-	import HeaderLabel from "./HeaderLabel.vue";
+	//import HeaderLabel from "./HeaderLabel.vue";
 	import HeaderButton from "./HeaderButton.vue";
 
 	export default {
 		components: {
-			'header-label' : HeaderLabel,
+			//'header-label' : HeaderLabel,
 			'header-button' : HeaderButton
 		}
 	}
