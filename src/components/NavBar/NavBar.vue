@@ -8,6 +8,7 @@
 					:label="link.label"
 					:icon="link.icon"
 					:to="link.to"
+					:hidden="link.hidden"
 				/>
 			</navbar-section>
 		</div>
