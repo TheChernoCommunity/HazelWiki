@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<navigation-bar :toc="HazelWikiLayout" />
+		<navigation-bar :toc="HazelWikiLayout"/>
 		<overlay />
 		<top-header />
 		<router-view/>
@@ -16,6 +16,8 @@
 	import '../node_modules/materialize-css/dist/js/materialize.js';
 
 	const HazelWikiLayout = require('@/assets/HazelWikiLayout.json');
+	
+	//const HazelWikiLayout = require('@/assets/pt_HazelWikiLayout.json');
 
 	export default {
 		name: 'App',

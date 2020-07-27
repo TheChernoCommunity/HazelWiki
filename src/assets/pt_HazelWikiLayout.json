@@ -1,0 +1,40 @@
+[
+	{
+		"label": "Barra de Navegação"
+	},
+	{
+		"label": "Tópicos",
+		"icon": "info",
+		"links": [
+			{ "to": "/"                  , "label": "Início"               , "type": "markdown", "src": "Basics/Home.md"               },
+			{ "to": "/Features"          , "label": "Recursos"           , "type": "markdown", "src": "Basics/FutureFeatures.md"     },
+			{ "to": "/GettingStarted"    , "label": "Começando"    , "type": "markdown", "src": "Basics/GettingStarted.md"     },
+			{ "to": "/SystemRequirements", "label": "Requisitos do Sistema", "type": "markdown", "src": "Basics/SystemRequirements.md" },
+			{ "to": "/BuildingHazel"     , "label": "Compilando Hazel"     , "type": "markdown", "src": "Basics/BuildingHazel.md"      },
+			{ "to": "/FirstProject"      , "label": "Primeiro Projeto"      , "type": "markdown", "src": "Basics/FirstProject.md"       }
+		]
+	},
+	{
+		"label": "Engine",
+		"icon": "menu_book",
+		"links": [
+			{ "to": "/Benchmarking", "label": "Benchmarking", "type": "markdown", "src": "Engine/Benchmarking.md" },
+			{ "to": "/LayerSystem" , "label": "Sistema de Camadas", "type": "markdown", "src": "Engine/LayerSystem.md"  },
+			{ "to": "/EventSystem" , "label": "Sistema de Eventos", "type": "markdown", "src": "Engine/EventSystem.md"  }
+		]
+	},
+	{
+		"label": "Links Úteis",
+		"links": [
+			{ "to": "https://thecherno.com/discord", "label": "Discord", "icon": "question_answer", "type": "ignore" }
+		]
+	},
+	{
+		"label": "Wiki Dev",
+		"icon": "code",
+		"links": [
+			{ "to": "/ContributingMarkdown", "label": "Contribua para a Wiki", "type": "markdown", "src": "Wiki Dev/ContributingMarkdown.md" },
+			{ "to": "/testpage", "label": "Testpage markdown", "type": "markdown", "src": "Wiki Dev/Testfile.md", "hidden": true }
+		]
+	}
+]

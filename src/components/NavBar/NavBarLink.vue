@@ -57,8 +57,15 @@
 		},
 		methods: {
 			closeNav() {
-				EventBus.$emit('navbar-closeVisibile');
-				EventBus.$emit('overlay-closeVisibile');
+				
+				var p = window.innerWidth / window.innerHeight;
+				if(p >= 1){
+					EventBus.$emit('overlay-closeVisibile');
+				} else {
+					EventBus.$emit('navbar-closeVisibile');
+					EventBus.$emit('overlay-closeVisibile');
+				}
+				
 			}
 		}
 	}
@@ -72,7 +79,9 @@
 		display: flex;
 		color: $NavBar_secundary_color;
 		font-size: 0.85em;
-		font-family: inherit
+		font-family: inherit;
+		padding-top: 4px;
+		padding-bottom: 4px;
 	}
 
 	.navbar_link:hover {
