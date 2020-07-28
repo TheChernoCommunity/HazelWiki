@@ -1,6 +1,6 @@
 <template>
 	<transition name = "navbar_fade">
-		<div class="navbar" v-show="visible">		
+		<div class="navbar" v-show="visible">
 			<navbar-section v-for="(section, index) in externalLinkArray" :key="index"
 				:label="section.label"
 				:icon="section.icon">
@@ -20,24 +20,22 @@
 	import { EventBus } from '@/main.js'
 	import NavBarSection from './NavBarSection.vue'
 	import NavBarLink from './NavBarLink.vue'
-
+	import Global from  "@/scss/Global.scss"
 
 	export default {
 		props: {
 			toc: {
 				type: Array,
 				required: true
-			},
-			
+			}
 		},
 		data() {
 			return {
 				visible: false,
 			}
 		},
-		
-		created() {	
-			if(!this.isMobile()){
+		created() {
+			if(!this.isLayoutCompact()){
 				this.visible = true;
 			}
 			EventBus.$on('navbar-toggleVisibile', () => {
@@ -46,43 +44,44 @@
 					EventBus.$emit('overlay-openVisibile');
 				}
 			});
-
 			EventBus.$on('navbar-closeVisibile', () => {
 				this.visible = false;
 				EventBus.$emit('overlay-closeVisibile');
 			});
 		},
-
-		mounted() {	
+		mounted() {
 			this.$nextTick(() => {
 			window.addEventListener('resize', this.onResize);
 			})
 		},
 		methods: {
 			onResize(){
-				if(!this.isMobile()){
+				if(!this.isLayoutCompact()){
 					this.visible = true;
 				} else {
 					this.visible = false;
 					EventBus.$emit('overlay-closeVisibile');
 				}
 			},
-			isMobile() {
+			isLayoutCompact(){
 				if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-					console.log("Mobile")
 					return true
-				} else {
-					console.log("PC")
-					return false
 				}
+				var r = window.innerWidth / window.innerHeight;
+				if(r <= 1){
+					return true
+				}
+				if( window.innerWidth <= Global.minScreenWidth){
+					return true
+				}
+				return false;
 			}
 		},
-		beforeDestroy() { 
-			window.removeEventListener('resize', this.onResize); 
+		beforeDestroy() {
+			window.removeEventListener('resize', this.onResize);
 		},
-
 		computed: {
-			externalLinkArray () {			
+			externalLinkArray () {
 				let externalLinkArray = this.toc;
 				for (let section of externalLinkArray) {
 					if (section.links) {
@@ -106,7 +105,7 @@
 		},
 		components: {
 			'navbar-section': NavBarSection,
-			'navbar-link': NavBarLink,
+			'navbar-link': NavBarLink
 		}
 	}
 </script>

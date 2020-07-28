@@ -6,6 +6,8 @@
 
 <script>
 	import MarkdownInterpreter from '@/components/MarkdownInterpreter/MarkdownInterpreter.vue';
+	import NavBar from  "@/scss/NavBar.scss";
+	import Global from  "@/scss/Global.scss";
 
 	export default {
 		props: {
@@ -16,43 +18,46 @@
 		},
 		data() {
 			return {
-				paddingLeft: 0, 
+				paddingLeft: 0,
 			}
 		},
 		components: {
 			'markdown-interpreter': MarkdownInterpreter,
 		},
-
-		created() {						
-			if(!this.isMobile()){
-				this.paddingLeft = 200;
+		created() {
+			if(!this.isLayoutCompact()){
+				this.paddingLeft = NavBar.width;
 			}
 		},
-		mounted() {			
+		mounted() {
 			this.$nextTick(() => {
 			window.addEventListener('resize', this.onResize);
 			})
 		},
 		methods: {
 			onResize(){
-				if(!this.isMobile()){
-					this.paddingLeft = 200;
+				if(!this.isLayoutCompact()){
+					this.paddingLeft = NavBar.width;
 				} else {
 					this.paddingLeft = 0;
 				}
 			},
-			isMobile() {
+			isLayoutCompact(){
 				if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-					console.log("Mobile")
 					return true
-				} else {
-					console.log("PC")
-					return false
 				}
+				var r = window.innerWidth / window.innerHeight;
+				if(r <= 1){
+					return true
+				}
+				if( window.innerWidth <= Global.minScreenWidth){
+					return true
+				}
+				return false;
 			}
 		},
-		beforeDestroy() { 
-			window.removeEventListener('resize', this.onResize); 
+		beforeDestroy() {
+			window.removeEventListener('resize', this.onResize);
 		}
 	}
 </script>

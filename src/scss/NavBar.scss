@@ -8,3 +8,7 @@ $NavBar_border: rgba(255, 255, 255, 0.08);
 $NavBar_primary_color: #ffffff;
 $NavBar_secundary_color: rgba($NavBar_primary_color, .5);
 $NavBar_font_family: $Global_font-family;
+
+:export {
+    width: 200;
+  }
