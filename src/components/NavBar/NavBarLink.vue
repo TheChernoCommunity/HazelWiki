@@ -9,7 +9,7 @@
 
 <script>
 	import { EventBus } from '@/main.js'
-	import Global from  "@/scss/Global.scss"
+	import Utils from '@/utils/Utils.js'
 
 	export default {
 		props: {
@@ -58,25 +58,12 @@
 		},
 		methods: {
 			closeNav() {
-				if(!this.isLayoutCompact()){
+				if(!Utils.isLayoutCompact()){
 					EventBus.$emit('overlay-closeVisibile');
 				} else {
 					EventBus.$emit('navbar-closeVisibile');
 					EventBus.$emit('overlay-closeVisibile');
 				}
-			},
-			isLayoutCompact(){
-				if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-					return true
-				}
-				var r = window.innerWidth / window.innerHeight;
-				if(r <= 1){
-					return true
-				}
-				if( window.innerWidth <= Global.minScreenWidth){
-					return true
-				}
-				return false;
 			}
 		}
 	}
