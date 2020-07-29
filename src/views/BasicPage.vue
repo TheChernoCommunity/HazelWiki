@@ -25,21 +25,21 @@
 			'markdown-interpreter': MarkdownInterpreter,
 		},
 		created() {
-			if(!Utils.isLayoutCompact()){
+			if(!Utils.isLayoutCompact()) {
 				this.paddingLeft = NavBar.width;
 			}
 		},
 		mounted() {
 			this.$nextTick(() => {
-			window.addEventListener('resize', this.onResize);
+				window.addEventListener('resize', this.onResize);
 			})
 		},
 		methods: {
-			onResize(){
-				if(!Utils.isLayoutCompact()){
-					this.paddingLeft = NavBar.width;
-				} else {
+			onResize() {
+				if(Utils.isLayoutCompact()) {
 					this.paddingLeft = 0;
+				} else {
+					this.paddingLeft = NavBar.width;
 				}
 			}
 		},

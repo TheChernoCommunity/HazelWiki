@@ -35,7 +35,7 @@
 			}
 		},
 		created() {
-			if(!Utils.isLayoutCompact()){
+			if(!Utils.isLayoutCompact()) {
 				this.visible = true;
 			}
 			EventBus.$on('navbar-toggleVisibile', () => {
@@ -51,16 +51,16 @@
 		},
 		mounted() {
 			this.$nextTick(() => {
-			window.addEventListener('resize', this.onResize);
+				window.addEventListener('resize', this.onResize);
 			})
 		},
 		methods: {
-			onResize(){
-				if(!Utils.isLayoutCompact()){
-					this.visible = true;
-				} else {
+			onResize() {
+				if(Utils.isLayoutCompact()) {
 					this.visible = false;
 					EventBus.$emit('overlay-closeVisibile');
+				} else {
+					this.visible = true;
 				}
 			}
 		},

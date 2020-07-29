@@ -58,10 +58,10 @@
 		},
 		methods: {
 			closeNav() {
-				if(!Utils.isLayoutCompact()){
+				if(Utils.isLayoutCompact()) {
+					EventBus.$emit('navbar-closeVisibile');
 					EventBus.$emit('overlay-closeVisibile');
 				} else {
-					EventBus.$emit('navbar-closeVisibile');
 					EventBus.$emit('overlay-closeVisibile');
 				}
 			}
