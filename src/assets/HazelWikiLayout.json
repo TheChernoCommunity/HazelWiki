@@ -27,6 +27,8 @@
 	{
 		"label": "Useful Links",
 		"links": [
+			{ "to": "https://thecherno.com", "label": "TheCherno", "icon": "info", "type": "ignore" },
+			{ "to": "https://thecherno.com/engine", "label": "Hazel", "icon": "code", "type": "ignore" },
 			{ "to": "https://thecherno.com/discord", "label": "Discord", "icon": "question_answer", "type": "ignore" }
 		]
 	},
