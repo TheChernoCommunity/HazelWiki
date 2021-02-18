@@ -20,7 +20,8 @@
 		"links": [
 			{ "to": "/Benchmarking", "label": "Benchmarking", "type": "markdown", "src": "Engine/Benchmarking.md" },
 			{ "to": "/LayerSystem" , "label": "Layer system", "type": "markdown", "src": "Engine/LayerSystem.md"  },
-			{ "to": "/EventSystem" , "label": "Event system", "type": "markdown", "src": "Engine/EventSystem.md"  }
+			{ "to": "/EventSystem" , "label": "Event system", "type": "markdown", "src": "Engine/EventSystem.md"  },
+			{ "to": "/RenderingAPI", "label": "Rendering API", "type": "markdown", "src": "Engine/RenderingAPI.md" }
 		]
 	},
 	{
