@@ -20,6 +20,7 @@
 	import { EventBus } from '@/main.js'
 	import NavBarSection from './NavBarSection.vue'
 	import NavBarLink from './NavBarLink.vue'
+	import Utils from '@/utils/Utils.js'
 
 	export default {
 		props: {
@@ -34,17 +35,37 @@
 			}
 		},
 		created() {
+			if(!Utils.isLayoutCompact()) {
+				this.visible = true;
+			}
 			EventBus.$on('navbar-toggleVisibile', () => {
 				this.visible = !this.visible;
 				if (this.visible) {
 					EventBus.$emit('overlay-openVisibile');
 				}
 			});
-
 			EventBus.$on('navbar-closeVisibile', () => {
 				this.visible = false;
 				EventBus.$emit('overlay-closeVisibile');
 			});
+		},
+		mounted() {
+			this.$nextTick(() => {
+				window.addEventListener('resize', this.onResize);
+			})
+		},
+		methods: {
+			onResize() {
+				if(Utils.isLayoutCompact()) {
+					this.visible = false;
+					EventBus.$emit('overlay-closeVisibile');
+				} else {
+					this.visible = true;
+				}
+			}
+		},
+		beforeDestroy() {
+			window.removeEventListener('resize', this.onResize);
 		},
 		computed: {
 			externalLinkArray () {

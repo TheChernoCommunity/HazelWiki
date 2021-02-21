@@ -9,6 +9,7 @@
 
 <script>
 	import { EventBus } from '@/main.js'
+	import Utils from '@/utils/Utils.js'
 
 	export default {
 		props: {
@@ -57,8 +58,12 @@
 		},
 		methods: {
 			closeNav() {
-				EventBus.$emit('navbar-closeVisibile');
-				EventBus.$emit('overlay-closeVisibile');
+				if(Utils.isLayoutCompact()) {
+					EventBus.$emit('navbar-closeVisibile');
+					EventBus.$emit('overlay-closeVisibile');
+				} else {
+					EventBus.$emit('overlay-closeVisibile');
+				}
 			}
 		}
 	}
@@ -72,7 +77,9 @@
 		display: flex;
 		color: $NavBar_secundary_color;
 		font-size: 0.85em;
-		font-family: inherit
+		font-family: inherit;
+		padding-top: 4px;
+		padding-bottom: 4px;
 	}
 
 	.navbar_link:hover {
@@ -88,4 +95,3 @@
 		font-size: 1.5em;
 	}
 </style>
-

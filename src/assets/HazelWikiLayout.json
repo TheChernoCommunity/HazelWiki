@@ -20,12 +20,15 @@
 		"links": [
 			{ "to": "/Benchmarking", "label": "Benchmarking", "type": "markdown", "src": "Engine/Benchmarking.md" },
 			{ "to": "/LayerSystem" , "label": "Layer system", "type": "markdown", "src": "Engine/LayerSystem.md"  },
-			{ "to": "/EventSystem" , "label": "Event system", "type": "markdown", "src": "Engine/EventSystem.md"  }
+			{ "to": "/EventSystem" , "label": "Event system", "type": "markdown", "src": "Engine/EventSystem.md"  },
+			{ "to": "/RenderingAPI", "label": "Rendering API", "type": "markdown", "src": "Engine/RenderingAPI.md" }
 		]
 	},
 	{
 		"label": "Useful Links",
 		"links": [
+			{ "to": "https://thecherno.com", "label": "TheCherno", "icon": "info", "type": "ignore" },
+			{ "to": "https://thecherno.com/engine", "label": "Hazel", "icon": "code", "type": "ignore" },
 			{ "to": "https://thecherno.com/discord", "label": "Discord", "icon": "question_answer", "type": "ignore" }
 		]
 	},
